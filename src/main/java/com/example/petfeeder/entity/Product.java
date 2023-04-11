@@ -6,10 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
-
-import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -19,7 +16,7 @@ import java.util.UUID;
 public class Product {
     @Id
     @GeneratedValue
-    private UUID id ;
+    private int id ;
     private String name ;
     private int breakfast;
     private int lunch;
