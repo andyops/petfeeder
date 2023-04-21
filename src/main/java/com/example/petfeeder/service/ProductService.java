@@ -34,6 +34,8 @@ public class ProductService {
         existingProduct.setBreakfast(product.getBreakfast());
         existingProduct.setLunch(product.getLunch());
         existingProduct.setDinner(product.getDinner());
+        existingProduct.setFeed1(product.getFeed1());
+        existingProduct.setFeed2(product.getFeed2());
         productRepository.save(existingProduct);
     }
 
