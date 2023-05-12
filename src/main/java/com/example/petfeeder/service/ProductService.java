@@ -30,12 +30,24 @@ public class ProductService {
     public void updateProduct(int productId, Product product) {
         Product existingProduct = productRepository.findById(productId)
                 .orElseThrow(()  -> new ResourceNotFoundException("Product", "id", productId));
-        existingProduct.setName(product.getName());
-        existingProduct.setBreakfast(product.getBreakfast());
-        existingProduct.setLunch(product.getLunch());
-        existingProduct.setDinner(product.getDinner());
-        existingProduct.setFeed1(product.getFeed1());
-        existingProduct.setFeed2(product.getFeed2());
+        if (product.getName() != null) {
+            existingProduct.setName(product.getName());
+        }
+        if (product.getBreakfast() != 0) {
+            existingProduct.setBreakfast(product.getBreakfast());
+        }
+        if (product.getLunch() != 0) {
+            existingProduct.setLunch(product.getLunch());
+        }
+        if (product.getDinner() != 0) {
+            existingProduct.setDinner(product.getDinner());
+        }
+        if (product.getFeed1() != 0) {
+            existingProduct.setFeed1(product.getFeed1());
+        }
+        if (product.getFeed2() != 0) {
+            existingProduct.setFeed2(product.getFeed2());
+        }
         productRepository.save(existingProduct);
     }
 
